@@ -8,3 +8,10 @@ class MainPageLocators:
 class LoginPageLocators:
     LOGIN_BTN = (By.NAME, 'login_submit')
     REGISTRATION_BTN = (By.NAME, 'registration_submit')
+
+
+class ProductPageLocators:
+    ADD_ITEM = (By.CSS_SELECTOR, '.btn.btn-lg.btn-primary.btn-add-to-basket')
+    PRICE_ITEM = (By.CSS_SELECTOR, '.col-sm-6.product_main .price_color')
+    TITLE_ITEM = (By.CSS_SELECTOR, '.col-sm-6.product_main h1')
+    ELEMENTS = (By.CSS_SELECTOR, '.alertinner strong')
