@@ -3,13 +3,13 @@ from selenium.webdriver.common.by import By
 import time
 
 try:
-    link = "http://suninjuly.github.io/registration1.html"
+    link = "https://suninjuly.github.io/registration1.html"
     browser = webdriver.Chrome()
     browser.get(link)
 
-    elements = browser.find_elements(By.CSS_SELECTOR, '.first_block input')
-    for element in elements:
-        element.send_keys('Random shit')
+    browser.find_element(By.XPATH, '//input[contains(@placeholder, "first")]').send_keys('Random word')
+    browser.find_element(By.XPATH, '//input[contains(@placeholder, "last")]').send_keys('Random word')
+    browser.find_element(By.XPATH, '//input[contains(@placeholder, "email")]').send_keys('Random word')
 
     # Отправляем заполненную форму
     button = browser.find_element(By.CSS_SELECTOR, "button.btn")
@@ -29,6 +29,6 @@ try:
 
 finally:
     # ожидание чтобы визуально оценить результаты прохождения скрипта
-    time.sleep(10)
+    time.sleep(2)
     # закрываем браузер после всех манипуляций
     browser.quit()
